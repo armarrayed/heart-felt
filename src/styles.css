@@ -1,0 +1,13 @@
+/* Master Styles */
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+@import url('../node_modules/ag-grid/dist/styles/ag-grid.css');
+@import url('../node_modules/ag-grid/dist/styles/ag-theme-material.css');
+html{
+  height: 100%;  
+}
+body {
+  background: rgb(11, 41, 63);
+  color: #fff;
+  height: 100%;
+}

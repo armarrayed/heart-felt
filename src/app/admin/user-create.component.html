@@ -1,0 +1,11 @@
+<header></header>
+
+
+<div class="container" style='height:100%'>
+<ag-grid-angular style="width: 100%;height: 100%;"  class="ag-theme-material"
+(gridReady)="onGridReady($event)"
+[gridOptions]="gridOptions"
+(cellClicked)="editContact($event)"
+(cellValueChanged)="onCellValueChanged($event)">
+</ag-grid-angular>
+</div>

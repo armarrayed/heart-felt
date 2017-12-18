@@ -1,0 +1,121 @@
+    .hf_logo{
+        width: 50%;
+        height: inherit;
+        margin: auto;
+    }
+    .hf_logo > img{
+        width: inherit;
+    }
+    .hf_login{
+        display: table;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    .hf_title_container{
+        display: table-cell;
+        vertical-align: middle;
+    }
+.hf_title_container_c01 ,{
+    width:45%;
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+ .hf_login_container > form{
+     width : 80%;
+    float: right;
+ }
+
+/* .hf_login_container{
+    position: relative;
+    float: right;
+    border-left: 2px solid #cccccc69;
+} */
+.hf_login_container_c01{
+    width: 50%;
+    margin: auto;
+}
+.hf_login_container_c01 input{
+    width: 100%!important;
+    font-size: 14px;
+    border: 2px solid rgba(130, 130, 130, 0.43);
+    background-color: transparent;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: 38px;
+    padding: 10px;
+    outline: none;
+    color: white;
+}
+
+.hf_login_container_c01 input[type="text"]:focus {
+    border-color: rgba(52, 224, 158, 0.92);
+    color: white
+    
+}
+
+.hf_login_container_c01 button{
+    background-color: rgba(52, 224, 158, 0.92) !important;
+    width: 100%;
+    margin-top: 20px;
+    height: 38px;
+    border: none;
+}
+
+.hf_login_container_c01 p{
+    padding-top: 20px;
+    margin-top: 5px;
+    color: gray;
+    
+}
+.hf_login_container_c02{
+}
+
+.hf_login_container_c01 span{
+    cursor: pointer;
+}
+
+.has_error{
+    border-color: #c11b1b !important;
+}
+.errorMessage{
+    color: red;
+}
+
+.passwordRequirment{
+    position: absolute;
+    left: -50%;
+    bottom: 0px;
+    display: none;
+    width: 50%;
+}
+.passwordCreate:focus + .passwordRequirment{
+    display: block !important;
+}
+
+@media screen and (max-width: 600px) {
+    .hf_title_container_c01{
+        height: 150px;
+    }
+    .hf_title_container_c01 , .hf_login_container {
+        width:100%;
+        display:block;
+        margin: 0px;
+    }
+
+    .hf_login_container_c01{
+        width: 80%;
+        margin: auto;
+    }
+    .hf_logo{
+        width: 130px;
+        height: inherit;
+        margin: auto;
+        float: none;
+    }
+    .hf_logo > img{
+        float: none;
+    }
+}

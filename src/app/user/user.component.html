@@ -1,0 +1,308 @@
+    <style>
+
+    .hf_ammount{
+        overflow: hidden;
+        margin-bottom: 25px;
+    margin-top: 25px;
+    }
+    .hf_ammount_c01{
+        float: left;
+    }
+    .hf_ammount_c03{
+        float: right;
+    width: 50%;
+    }
+
+    .hf_ammount_c02 {
+  text-align: right;
+}
+
+input.hf_ammount_c02::-webkit-outer-spin-button,
+input.hf_ammount_c02::-webkit-inner-spin-button {
+  display: none;
+}
+        .container{
+            margin-top: 30px;
+        }
+        .hf_register_block{
+            position: relative;
+            min-height: 450px;
+            margin-bottom: 15px;
+        }
+        .hf_register_paymentOption_c01{
+            /* border: 2px solid red; */
+            padding: 20px 115px;
+            overflow: hidden;
+        }
+        .hf_register_paymentOption_c02{
+            margin-top: 15px;
+        }
+        .hf_register_paymentOption_c02 .fa-undo{
+            float: right;
+            padding-right: 80px;
+            cursor: pointer;
+        }
+        .hf_transactionTable{
+            overflow:auto;
+            height:300px;
+        }
+        .hf_register_online_c01{
+            overflow: hidden;
+            padding: 20px;
+        }
+        .hf_register_online_c02{
+            line-height: 2.5;
+        }
+        .hf_register_online_c02 , .hf_register_online_c03{
+            width: 45%;
+            float: left;
+        }
+        /* .hf_barrier{
+
+        } */
+        .hf_register_paymentOption_c01 div{
+            border-bottom: 2px solid;
+            display: inline-block;
+            padding: 12px 35px 8px;
+            width: 160px;
+            margin: -2px;
+        }
+        .active_border{
+            border-color: #61c294 !important;
+            color: #61c294
+        }
+
+        .example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+
+
+.hf_register_paymentOption_submit{
+    position: absolute;
+    bottom: 13px;
+    width: 100%;
+    padding: 0px 5px;
+}
+.btn-success {
+    background-color: #61c294 !important;
+    border-color: #69f0ae !important;
+}
+
+ .hf_register_block_c01 {
+    background: rgba(105, 240, 174, 0.09);
+    margin-left: -40px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+:host /deep/ .mat-table {
+    background: rgba(0,0,0,.075);
+}
+:host /deep/ .mat-tab-body-content{
+    overflow: hidden;
+}
+.hf_cash_form{
+    width: 300px;
+    padding: 25px;
+    margin: auto;
+}
+.hf_register_online_c02_c11{
+    font-weight: 400 !important;
+    letter-spacing: 1.5px !important;
+}
+
+.newsFeed{
+    max-height: 830px;
+    overflow: auto;
+}
+.newsFeed::-webkit-scrollbar-track ,.hf_transactionTable::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #0b293f;
+}
+
+.newsFeed::-webkit-scrollbar ,.hf_transactionTable::-webkit-scrollbar
+{
+	width: 9px;
+	background-color: #0b293f;
+}
+
+.newsFeed::-webkit-scrollbar-thumb,.hf_transactionTable::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+.newsFeed_c01{
+    background: rgba(105, 240, 174, 0.09);
+    padding: 12px;
+    margin-bottom: 10px;
+    min-height: 350px;
+    position: relative;
+}
+.newsFeed_footer{
+position: absolute;
+margin: 0px !important;
+bottom: 0px;
+left: 10px;
+}
+.newsFeed_c02{
+    height: 280px;
+    margin-bottom: 5px;
+    width: inherit;
+}
+.newsFeed_c02 img{
+    width: 100%;
+    height: inherit;
+}
+
+:host /deep/ .newsFeed .mat-card-title,:host /deep/ .newsFeed .mat-card-subtitle{
+    margin-bottom: 10px !important;
+}
+
+.showmore{
+    position: absolute;
+    bottom: -5px;
+    right: 3px;
+    background-color: #133b49;
+    padding-left: 86.2%;
+    padding-top: 5px;
+    cursor: pointer;
+}
+      </style>
+<header></header>
+<!-- <div class="hf_barrier"></div> -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="hf_register_block">
+                <mat-card class="hf_register_block_c01">
+                        <h2>PAYMENT REGISTER</h2>
+                </mat-card>
+                <div class="hf_ammount">  
+                    <div class="hf_ammount_c01">
+                    <mat-form-field color="accent">
+                        <input matInput placeholder="Amount" type="number" class="hf_ammount_c02">
+                        <span matPrefix>Rs.&nbsp;</span>
+                        <span matSuffix>.00</span>
+                    </mat-form-field>
+                    </div>
+                    <div class="hf_ammount_c03">
+                    <mat-form-field color="accent">
+                        <input matInput #message maxlength="256" placeholder="Message">
+                        <mat-hint align="start"><strong>Description about the amount</strong> </mat-hint>
+                        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                    </mat-form-field>
+                    </div>
+                </div>
+                <mat-tab-group class="demo-tab-group" color="accent" (indexFocused)="_focusChanged($event)">
+                    <mat-tab label="ONLINE">
+                      <div class="demo-tab-content">
+                            <h3>ONLINE PAYMENT</h3>
+                            <div class="hf_register_online_c01">
+                                    <div class="hf_register_online_c02">
+                                        <mat-radio-group name="more_options2" [(ngModel)]="onlineType">
+                                            <mat-radio-button  name="group2" value="refNum"> <span class="hf_register_online_c02_c11">REFERENCE NUMBER</span></mat-radio-button><br>
+                                            <mat-radio-button  name="group2" value="screenshot"><span class="hf_register_online_c02_c11">UPLOAD SCREENSHOT</span></mat-radio-button>
+                                        </mat-radio-group>
+                                    </div>
+                                    <div class="hf_register_online_c03">                                                    
+                                        <mat-form-field color="accent" *ngIf="onlineType == 'refNum'">
+                                            <input [(ngModel)]="hfFundType.refNumber" matInput placeholder="Ref Number" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>                                    
+                            </div>  
+                      </div>
+                    </mat-tab>
+                    <mat-tab label="CASH">
+                     <div class="demo-tab-content">
+                        <h3>CASH PAYMENT</h3>
+                        <div  class="hf_cash_form">
+                        <mat-form-field color="accent">
+                            <mat-select placeholder="Admin" [(ngModel)]="hfFundType.hfAdmin" name="admin">
+                                <mat-option *ngFor="let admin of admins" [value]="admin.name">
+                                    {{admin.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                     </div>
+                      </div>  
+                    </mat-tab>
+            </mat-tab-group>
+            <div class="hf_register_paymentOption_submit">
+                    <button mat-raised-button color="accent" [disabled] = "!hfFundType.hfAdmin && !hfFundType.refNumber">SUBMIT</button>
+                    <button mat-raised-button color="accent" [disabled] = "!hfFundType.hfAdmin && !hfFundType.refNumber" (click)="hfFundType = {}">RESET</button>
+            </div>
+		</div>
+		<div class="hf_lastPayments">
+			<mat-card class="hf_register_block_c01"><h2>PAST PAYMENTS</h2></mat-card>
+
+            <div infiniteScroll
+            [infiniteScrollDistance]="1"
+            [infiniteScrollThrottle]="500"
+            (scrolled)="loadMoreContacts()"
+            [scrollWindow]="false"  class="hf_transactionTable" >
+                    <mat-table #table [dataSource]="dataSource">
+                  
+                      <!--- Note that these columns can be defined in any order.
+                            The actual rendered columns are set as a property on the row definition" -->
+                  
+                      <!-- Position Column -->
+                      <ng-container matColumnDef="position">
+                        <mat-header-cell *matHeaderCellDef > No. </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+                      </ng-container>
+                  
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="transactionType">
+                        <mat-header-cell *matHeaderCellDef> Transaction Type </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.transactionType}} </mat-cell>
+                      </ng-container>
+                  
+                      <!-- Weight Column -->
+                      <ng-container matColumnDef="amount">
+                        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
+                      </ng-container>
+                                    
+                      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+            </div>
+                  
+        </div>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="newsFeed" >
+                <mat-card class="newsFeed_c01" *ngFor = "let news of newsFeed">
+                        <mat-card-header >
+                          <mat-card-title>{{news.title}}</mat-card-title>
+                          <mat-card-subtitle>{{news.time}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <div  *ngIf="news.images.length" class="newsFeed_c02">
+                            <img  [src]="news.images" alt="noteFound">
+                        </div>
+                        <mat-card-content style="position:relative" [ngStyle]="news.images.length && {'height' : '65px','overflow': 'hidden','margin-top': '15px'} || !news.images.length && {'min-height' : '200px','overflow': 'hidden','margin-top': '15px'}">
+                                                        
+                          <p style="word-break: break-all">
+                            {{news.note}}                            
+                          </p>
+                        <div class="showmore" *ngIf="news.images.length && news.note.length >=140" [showMore]="false">show more</div>  
+                        <div class="showmore" *ngIf="!news.images.length && news.note.length >=770" [showMore]="false">show more</div>  
+                        
+                        </mat-card-content>
+                        <mat-card-actions class="newsFeed_footer">
+                                <button mat-icon-button [color]="news.liked == 1 ? 'accent' : ''">
+                                        <mat-icon  (click)="news.liked = 1"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i></mat-icon>
+                                </button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+        </div>
+	</div>
+</div>
+      

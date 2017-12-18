@@ -1,0 +1,41 @@
+<style>
+    .hf_headContainer{
+        overflow: hidden;
+        padding: 0px 60px;
+        color: white;
+        background-color: rgba(108, 232, 171, 0.77);
+    }
+    .hf_headContainer{
+        box-shadow: 4px 3px 5px rgba(22, 117, 139, 0.85)
+    }
+    .hf_headContainer h2{
+        display: inline;
+        float: left;
+    }
+    .hf_navigation{
+        display: inline;
+        overflow: hidden;
+        margin-left: 25px;
+    }
+    .hf_navigation span{
+        display: inline-block;
+        font-size: 15px;
+        height: 62px;
+        line-height: 62px;
+        padding: 4px 10px;
+        cursor: pointer;
+    }
+    .hf_navigation span:hover{
+        box-shadow: 0px 0px 21px 0px rgb(18, 91, 113);
+    }
+</style>
+<div class="hf_headContainer">
+     <h2>HEART FELT</h2>
+     <div class="hf_navigation">
+        
+            <span (click) = "changeTo('admin')">HOME</span>
+            <span (click) = "changeTo('user-create')">USER</span>
+            <span (click) = "changeTo('budget')">BUDGET</span>
+        
+     </div>
+</div>

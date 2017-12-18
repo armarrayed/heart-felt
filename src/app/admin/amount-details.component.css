@@ -1,0 +1,25 @@
+.balance_details > div:nth-child(1),.balance_details h3{
+    display : inline-block;
+    float: left
+}
+.balance_details_c01{
+    margin-top: 21px;
+    margin-left: 25px;
+    padding-left: 20px;
+    display : inline-block;
+    border-left: 2px solid #ffffff99;
+    width: 190px;
+}
+.balance_details_c01 div{
+    padding: 5px 0px;
+}
+.balance_card{
+    background-color: rgba(105, 240, 174, 0.09);
+}
+.row{
+    margin-top: 50px;
+}
+.balance_details_c01 > div > span{
+float: right
+}
+

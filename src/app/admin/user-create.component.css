@@ -1,0 +1,58 @@
+.hf_make_admin_card{
+    background-color:  rgba(105, 240, 174, 0.09);
+    padding: 30px 45px;
+}
+.hf_make_admin_card h3{
+    margin-left: -20px;
+}
+.hf_make{
+    width: 80%;
+    float:right;
+}
+.hf_make_admin_card_c01{
+    line-height: 3;
+    margin-left: 30px;
+}
+:host /deep/ .ng2-tag-input__text-input{
+    background-color: transparent !important;
+    margin-top: -10px;
+}
+
+:host /deep/ .bootstrap3-info.ng2-tag-input{
+    background-color: transparent !important;
+    height: auto !important;
+    border: 2px solid #31d197  !important;
+    color: white !important;
+    width: 50% !important;
+    margin: 20px auto auto 30px !important;
+}
+
+:host /deep/ .bootstrap3-info  tag{
+    background-color: #31d197 !important;
+}
+.hf_make_admin_card_footer{
+    padding: 25px 30px 15px;
+    letter-spacing: 10px;
+}
+
+.ag-header-cell-label{
+    text-align:center;
+}
+
+:host /deep/ .ag-theme-material .ag-header-cell, .ag-theme-material .ag-header-group-cell{
+    padding-right : 5px !important;
+}
+
+:host /deep/ .ag-theme-material .ag-cell-focus {
+    border: 2px solid #56bb92;
+}
+
+:host /deep/  .ag-theme-material .ag-cell-inline-editing input[type='text']:focus{
+    border-bottom: 2px solid #56bb92;
+}
+
+:host /deep/ .my-class{
+    border: none !important;
+    cursor: pointer;
+    text-align: center;
+}
