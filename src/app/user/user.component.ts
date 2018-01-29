@@ -11,7 +11,7 @@ export class MatTabChangeEvent {
 
 @Component({
     templateUrl : "./user.component.html",
-    //styleUrls : " "
+    styleUrls : ["./user.component.css"]
 })
 export class UserComponent{
 

@@ -1,22 +1,19 @@
-import { Component, style, HostListener} from '@angular/core';
+import { Component, style, HostListener, Inject} from '@angular/core';
 import { GridOptions } from "ag-grid";
-import {Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { editContactDialog } from './edit-contact.component'
+
+
 @Component({
     templateUrl: "./user-create.component.html",
     styleUrls : ["./user-create.component.css",'../landing-page.component.css']
 })
 export class UserCreateComponent{
   public gridOptions: GridOptions;
-  //columnDefs :Array<any> = [];
   rowData :Array<any> = [];
   private gridApi : any;
   private gridColumnApi : any;
-  @HostListener('window:resize') onResize() {
-    // guard against resize before view is rendered
-console.log('here')
-  }
+
   constructor(public dialog: MatDialog) {
     this.gridOptions = <GridOptions>{
       rowData: UserCreateComponent.createRowData(),
@@ -24,25 +21,36 @@ console.log('here')
       enableSorting: true,
       enableColResize: true
     };
- 
+
   };
 
-   editContact(event : any){
-    if(event.colDef.field == 'type')
-      this.onBtStartEditing(event.rowIndex);
-    else if(event.colDef.field == 'edit'){
-      this.openDialog(event.data);
+    @HostListener('window:resize') onResize() {
+      console.log('here')
     }
+
+   editContact(event : any){
+      if(event.colDef.field == 'type')
+        this.onBtStartEditing(event.rowIndex);
+      else if(event.colDef.field == 'edit'){
+        this.editContactPopup(event.data);
+      }
     };
 
-    onCellValueChanged(event : any){
-        console.log(event,"onCellValueChanged")
+    addNewContact(){
+      this.editContactPopup({});
     }
+
+    
+
     onGridReady(params : any) {
       this.gridApi = params.api;
       this.gridColumnApi = params.columnApi;
 
       this.gridApi.sizeColumnsToFit();
+    }
+
+    onCellValueChanged(event: any) {
+      console.log(event, "onCellValueChanged")
     }
 
     onBtStartEditing(rowIndx : any) {
@@ -52,10 +60,10 @@ console.log('here')
       });
     }
 
-    openDialog(rowData : object): void {
-      console.log(rowData)
+    editContactPopup(rowData : object): void {
       let dialogRef = this.dialog.open(editContactDialog, {
-        width: '500px',
+        panelClass: 'edit-contact-dialog',
+        width: '550px',
         data: { rowData },
         disableClose : true
       });
@@ -88,10 +96,21 @@ console.log('here')
     ]
   };
 
+  private static makeName() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
   private static createRowData() {
   var gridData = new Array(); 
     for(var x=1;x<200;x++){
-     gridData.push({'firstName': "Test"+x, 'lastName': "Txt"+x, 'empId': x,
+      gridData.push({
+        'firstName': this.makeName(), 'lastName': this.makeName(), 'empId':'cs10'+ x+'c',
       "email": x+'@gmail.com', "phone": 878389789, "defAmmount": 100,
       "type": 'cash'})
     }

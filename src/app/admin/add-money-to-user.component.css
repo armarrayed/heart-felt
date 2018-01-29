@@ -1,0 +1,19 @@
+.rightAlign{
+   margin-left: 25px;
+}
+
+.rightAlign_c01{
+     margin-left: 38px;  
+}
+/deep/ .mat-dialog-container {
+  background: rgb(11, 41, 63) !important;
+  overflow: hidden !important;
+}
+
+.leftAlign{
+    color: #69f0ae;
+
+}
+
+
+

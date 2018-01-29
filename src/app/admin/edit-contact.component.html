@@ -1,35 +1,60 @@
 
-<form #createAccountForm="ngForm">
-        <div class="form-group">
-            <div class="hf_login_container_c01 hf_login_container_c02">
-                <input type="text" id="firstName" name="firstName" [ngClass]="firstName.touched && firstName.invalid || firstName.value == '' ? 'has_error' : ''" class="form-control"  required  [(ngModel)]="crtnew.firstName" #firstName="ngModel" placeholder="First Name">
-                    <div *ngIf="(firstName.invalid && (firstName.dirty || firstName.touched))" class="errorMessage">
-                        <div *ngIf="firstName.errors.required"> First Name is required.</div>
-                    </div>
-                <input type="text" name="lastName" placeholder="Last Name" [(ngModel)]="crtnew.lastName">                              
-                <input type="text" name="phone" [ngClass]="phone.touched && phone.invalid || phone.value == '' ? 'has_error' : ''" class="form-control"  required pattern="[0-9]+"  [(ngModel)]="crtnew.phone" #phone="ngModel" placeholder="Phone">
-                    <div *ngIf="(phone.invalid && (phone.dirty || phone.touched))" class="errorMessage">
-                        <div *ngIf="phone.errors.required"> Phone number is required.</div>
-                        <div *ngIf="phone.errors.pattern"> Only numbers are allowed.</div>
-                    </div>
-                <input type="text" name="email" [ngClass]="email.touched && email.invalid || email.value == '' ? 'has_error' : ''" class="form-control"  required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  [(ngModel)]="crtnew.email" #email="ngModel" placeholder="Email@mail.com">
-                    <div *ngIf="(email.invalid && (email.dirty || email.touched))" class="errorMessage">
-                        <div *ngIf="email.errors.required"> Email number is required.</div>
-                        <div *ngIf="email.errors.pattern"> Email should be in Email@mail.com formate.</div>
-                    </div>
-                <!-- <input type="text"  name="password" [ngClass]="password.touched && password.invalid || password.value == '' ? 'has_error' : ''" class="form-control passwordCreate"  required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"  [(ngModel)]="crtnew.password" #password="ngModel"  placeholder="Password">
-                <div class="passwordRequirment">Password should contain at least one number, one lowercase and one uppercase letter and at least six characters.</div>                            
-                    <div *ngIf="(password.invalid && (password.dirty || password.touched))" class="errorMessage">
-                        <div *ngIf="password.errors.required"> Password is required.</div>
-                        <div *ngIf="password.errors.pattern"> Your Password doesnt meet requirments.</div>
-                    </div>
-                <input *ngIf="crtPassword" name="confirmPassword" type="text" placeholder="Confirm Password"> -->
-                <button type="button" class="btn btn-success" >CONNECT</button>  
-                
-            </div>  
-        </div>
-     </form>
-<div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="crtnew" tabindex="2">Save</button>
-  <button mat-button (click)="onNoClick()" tabindex="-1">Close</button>
-</div>
+<div class="popup_close" (click)="onNoClick()">
+    <i class="fa fa-circle fa-2x" aria-hidden="true"></i>
+    <i class="fa fa-times" aria-hidden="true"></i>
+ </div>
+<div class="contact_edit">
+
+    <h1 *ngIf="empDetails.empId" [innerText]="empDetails.empId | uppercase"></h1>
+    <h1 *ngIf="!empDetails.empId">ADD CONTACT</h1>
+    <div class="contact_edit_body">
+      
+       <mat-form-field  *ngIf="!empDetails.empId" color="accent">
+          <input matInput placeholder="Employee Id" [formControl]="empId" required>
+          <mat-error *ngIf="empId.hasError('required')">
+             This field is required
+          </mat-error>
+       </mat-form-field>
+       <mat-form-field  color="accent">
+          <input matInput placeholder="First Name" [formControl]="firstName" required>
+          <mat-error *ngIf="firstName.hasError('required')">
+             This field is required
+          </mat-error>
+       </mat-form-field>
+       <mat-form-field  color="accent">
+          <input matInput placeholder="Last Name" [formControl]="lastName">
+       </mat-form-field>
+       <mat-form-field  color="accent">
+          <input matInput placeholder="Phone Number" [formControl]="phone" required>
+          <mat-error *ngIf="phone.hasError('required')">
+             This field is required
+          </mat-error>
+       </mat-form-field>
+       <mat-form-field  color="accent">
+          <input matInput placeholder="email" [formControl]="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+          <mat-error *ngIf="email.hasError('required')">
+             This field is required
+          </mat-error>
+          <mat-error *ngIf="email.hasError('pattern')">
+             Please enter a valid email address
+          </mat-error>
+       </mat-form-field>
+       <div class="contact_payment_type">
+           <div> <b>Payment Type</b> </div>
+           <div>
+                <mat-radio-group class="row">
+                        <mat-radio-button value="online" class="col-sm-6">Online</mat-radio-button>
+                        <mat-radio-button value="cash" class="col-sm-6">Cash</mat-radio-button>
+                </mat-radio-group>
+           </div>
+       </div>
+       <div class="make_admin">
+            <mat-checkbox>Make Admin</mat-checkbox>
+       </div>
+       
+    </div>
+    <div class="contact_edit_footer dialog_footer" mat-dialog-actions>
+       <button mat-button [mat-dialog-close]="crtnew" tabindex="2">Save</button>
+       <button mat-button (click)="onNoClick()" tabindex="-1">Close</button>
+    </div>
+ </div>

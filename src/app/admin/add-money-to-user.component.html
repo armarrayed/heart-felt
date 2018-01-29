@@ -1,0 +1,28 @@
+<div class="popup_close" (click)="onNoClick()">
+    <i class="fa fa-circle fa-2x" aria-hidden="true"></i>
+    <i class="fa fa-times" aria-hidden="true"></i>
+ </div>
+
+<mat-list >
+    <mat-list-item> <span class="leftAlign">Admin:</span>  <span class="rightAlign" [innerText]="loggedInUser"> </span></mat-list-item>
+    <mat-list-item> <span class="leftAlign"> User:</span> 
+
+        <span class="rightAlign_c01">
+            <mat-form-field color="accent">
+                <mat-select placeholder="User" [(ngModel)]="selectedUser">
+                    
+                    <mat-option *ngFor="let user of users" [value]="user">
+                        {{user.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </span>
+       
+    </mat-list-item>
+    <mat-list-item><span class="leftAlign"> Ammount:</span> <span *ngIf="selectedUser" [innerText]="selectedUser.defaultAmmount" class="rightAlign"></span></mat-list-item>
+</mat-list>
+
+<div class="dialog_footer" mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="crtnew" tabindex="2">Send</button>
+    <button mat-button (click)="onNoClick()" tabindex="-1">Close</button>
+</div>

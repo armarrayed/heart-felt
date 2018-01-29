@@ -1,0 +1,45 @@
+
+/deep/ .mat-dialog-container{
+    background: rgb(11, 41, 63) !important;
+    overflow: hidden !important
+}   
+
+/deep/ .edit-contact-dialog{
+    position: relative !important;
+}
+
+.contact_edit_body{
+    padding: 13px 24px;
+}
+
+.contact_edit_footer{
+    margin-bottom: 0px Important;
+    padding: 5px;
+    margin-bottom: 2px;
+    padding-left: 24px;
+}
+
+.contact_edit > h1{
+    margin-top: 0px !important;
+    padding: 10px 24px 0px !important;
+    color: #4bab7c;
+}
+
+.contact_edit_footer > button{
+    color:rgb(75, 171, 124) !important;
+    font-size: 18px;
+    border: 1px solid;
+    margin-right: 15px;
+}
+
+/deep/ .contact_edit_body .mat-form-field{
+    margin-right: 20px;
+}
+
+.contact_payment_type,.make_admin{
+    color: #ffffffc4;
+}
+
+.contact_payment_type> div:nth-child(2){
+    /* margin: 10px 0px;    */
+}

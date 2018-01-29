@@ -11,3 +11,35 @@ body {
   color: #fff;
   height: 100%;
 }
+
+.popup_close{
+position: absolute;
+top:-11px;
+right: 13px;
+cursor: pointer;
+}
+
+.popup_close > .fa-circle{
+  position: absolute;
+  color: #0b293f;
+}
+
+.popup_close > .fa-times{
+  position: absolute;
+  color: #4bab7c;
+  top: 6px;
+  right: -17px;
+}
+
+.dialog_footer>button {
+  color: rgb(75, 171, 124) !important;
+  font-size: 18px;
+  border: 1px solid;
+  margin-right: 15px;
+  line-height: 30px !important;
+}
+
+
+
+
+

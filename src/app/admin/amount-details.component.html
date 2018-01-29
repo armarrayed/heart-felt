@@ -1,27 +1,78 @@
 <header></header>
-<div class="container">
-    <div class="row">      
-        <div class="col-md-offset-3 col-md-6 balance_details">
-            <mat-card class="balance_card">
-                <div><h3>BALENCE DETAILS</h3></div>
-                <div class="balance_details_c01">
-                    <div>Total Amount <span>: xxxxx</span></div>
-                    <div>Spent Amount <span>: xxxxx</span></div>
-                    <div>Current Amount <span>: xxxxx</span></div>
-                </div>
-            </mat-card>
-        </div>       
-    </div>
-    <div class="row">
-            <div class="col-md-offset-3 col-md-6 balance_details">
-                <mat-card class="balance_card">
-                    <div><h3>CURRENT AMOUNT</h3></div>
-                    <div class="balance_details_c01">
-                        <div>Eswar <span>: xxxxx</span></div>
-                        <div>Chandu <span>: xxxxx</span></div>
-                        <div>Raju <span>: xxxxx</span></div>
+<div class="container" [ngStyle]="{'height' : (windowHeight - 70) +'px'}">
+    <div class="amount_details row">
+        <div class="col-sm-6">
+            <div class="element_middle_container" [ngStyle]="{'height' : (windowHeight - 210) +'px'}">
+                <div class="element_middle">
+                    <div class="amount_details_c01 row">
+                        <div class="col-sm-12 balance_details">
+                            <mat-card class="balance_card">
+                                <div>
+                                    <h3>BALENCE DETAILS</h3>
+                                </div>
+                                <div class="balance_details_c01">
+                                    <div>Total Amount <span>: xxxxx</span></div>
+                                    <div>Spent Amount <span>: xxxxx</span></div>
+                                    <div>Current Amount <span>: xxxxx</span></div>
+                                </div>
+                            </mat-card>
+                        </div>
                     </div>
-                </mat-card>
-            </div> 
+                    <div class="amount_details_c01 row">
+                        <div class="col-sm-12 balance_details">
+                            <mat-card class="balance_card">
+                                <div>
+                                    <h3>CURRENT AMOUNT</h3>
+                                </div>
+                                <div class="balance_details_c01">
+                                    <div>Eswar <span>: xxxxx</span></div>
+                                    <div>Chandu <span>: xxxxx</span></div>
+                                    <div>Raju <span>: xxxxx</span></div>
+                                </div>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fund_accept col-sm-6">
+            <div class="element_middle_container" [ngStyle]="{'height' : (windowHeight - 210) +'px'}">
+                <div class="element_middle">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button mat-raised-button color="accent" class="behalfOfUser" (click)="openAddDialog()">Add Money To User</button>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <mat-card class="accept_fund_c01 accept_fund_c11 accept_fund_header">
+                                        <div>Employee</div>
+                                        <div>Ammount</div>
+                                        <div>Fund</div>
+                                    </mat-card>
+                                </div>
+                                <div class="accept_fund col-sm-12" [ngStyle]="{'max-height' : (windowHeight - 210) +'px'}" style="overflow:auto">
+                                    <div *ngFor='let contact of fundList'>
+                                        <mat-card class="accept_fund_c01" *ngIf="!contact.isAccepted">
+                                            <div>
+                                                <span [innerText]="contact.firstName"></span>
+                                                <span [innerText]="contact.lastName"></span>
+                                            </div>
+                                            <div>
+                                                <span [innerText]="contact.funded"></span>
+                                            </div>
+                                            <div>
+                                                <button mat-mini-fab color="accent" (click)="fundStatus(true,contact)"><i class="material-icons">&#xE876;</i></button>
+                                                <button mat-mini-fab color="warn" (click)="fundStatus(false,contact)"><i class="material-icons">&#xE14C;</i></button>
+                                            </div>
+                                        </mat-card>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

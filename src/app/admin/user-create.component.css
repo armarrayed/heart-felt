@@ -56,3 +56,17 @@
     cursor: pointer;
     text-align: center;
 }
+
+.addContact{
+position: fixed;
+top: 35px;
+right:18%;
+}
+.contacts_grid{
+    margin-top: 25px;
+}
+
+:host /deep/ .mat-progress-spinner{
+    width: 100px !important;
+    height: 100px !important
+}

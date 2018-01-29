@@ -7,8 +7,11 @@
     margin-left: 25px;
     padding-left: 20px;
     display : inline-block;
-    border-left: 2px solid #ffffff99;
+    border-left: 2px solid #56bb92;
     width: 190px;
+}
+.amount_details_c01{
+    margin-top: 50px;
 }
 .balance_details_c01 div{
     padding: 5px 0px;
@@ -16,10 +19,124 @@
 .balance_card{
     background-color: rgba(105, 240, 174, 0.09);
 }
-.row{
+.amount_details{
     margin-top: 50px;
 }
 .balance_details_c01 > div > span{
 float: right
 }
+
+.accept_fund_c01{
+        width:100%;
+        margin-bottom: 2px;
+        display: -webkit-flex;
+        display: flex;
+}
+.accept_fund_c01 div {
+  -webkit-flex: 1;
+  /* Safari 6.1+ */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  text-align: center
+}
+
+
+:host /deep/ .mat-card{
+    background: #133b49 !important;
+}
+
+.accept_fund_c01 {
+line-height: 3;
+padding: 15px !important;
+}
+  /* .accept_fund {
+ margin-top: 50px;
+} */
+
+.accept_fund_c01 button{
+    margin-right: 25px;
+}
+
+  .accept_fund_c01 .material-icons,
+.accept_fund_c01 .fa-check{
+    color: #133b49;
+}
+
+.accept_fund_header{
+    padding: 0px !important;
+}
+
+.behalfOfUser{
+    margin-bottom: 10px;
+    text-align: center;
+    width: 98.5%;
+    font-size: 15px;
+}
+
+.accept_fund_c11{
+    width: 98.5%;
+}
+.accept_fund::-webkit-scrollbar-track ,.hf_transactionTable::-webkit-scrollbar-track
+{
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+border-radius: 10px;
+background-color: #0b293f;
+}
+
+.accept_fund::-webkit-scrollbar ,.hf_transactionTable::-webkit-scrollbar
+{
+width: 9px;
+background-color: #0b293f;
+}
+
+.accept_fund::-webkit-scrollbar-thumb,.hf_transactionTable::-webkit-scrollbar-thumb
+{
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+background-color: #555;
+}
+
+.element_middle_container{
+      display: table;
+      width: 100%;
+}
+
+.element_middle{
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+}
+
+/deep/ .add_contact_container{
+    position:  relative !important;
+}
+
+
+
+@media(max-width : 765px){
+    .fund_accept{
+        margin: 0px !important;
+        margin-top: 10px !important;
+    }
+    .amount_details {
+        margin-top: 10px !important;
+    }
+}
+@media(max-width : 1200px) and (min-width : 765px ){
+    .amount_details_c01{
+        margin-top: 5px !important;
+    }
+
+    .balance_card {
+        padding: 20px !important;
+    }
+    .balance_details{
+        margin-top: 10px !important;
+    }
+}
+
+
+
+
 
